@@ -1,6 +1,7 @@
-const API = 'https://randomuser.me/api/';
+const API = process.env.API ? process.env.API : "https://randomuser.me/api/";
 
 const getData = async (id) => {
+
   const apiURl = id ? `${API}${id}` : API;
   try {
     const response = await fetch(apiURl);
